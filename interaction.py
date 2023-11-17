@@ -10,24 +10,44 @@ chrome_options.add_experimental_option("detach", True)
 driver = webdriver.Chrome(options=chrome_options)
 
 # Open website
-driver.get("https://en.wikipedia.org/wiki/Main_Page")
+# driver.get("https://en.wikipedia.org/wiki/Main_Page")
+#
+# article_count = driver.find_element(By.CSS_SELECTOR,'#articlecount a')
+# print(article_count.text)
+#
+# # article_count.click()
+#
+# view_history = driver.find_element(By.LINK_TEXT, "View history")
+# view_history.click()
+#
+# search_button = driver.find_element(By.CSS_SELECTOR, "#p-search a")
+# search_button.click()
+#
+# search_bar = driver.find_element(By.NAME, "search")
+# search_bar.send_keys("Python")
+#
+# search_bar = driver.find_element(By.NAME, "search")
+# search_bar.send_keys(Keys.ENTER)
 
-article_count = driver.find_element(By.CSS_SELECTOR,'#articlecount a')
-print(article_count.text)
+driver.get("https://secure-retreat-92358.herokuapp.com/")
 
-# article_count.click()
+first_name = driver.find_element(By.NAME, "fName")
+last_name = driver.find_element(By.NAME, "lName")
+email = driver.find_element(By.NAME, "email")
 
-view_history = driver.find_element(By.LINK_TEXT, "View history")
-view_history.click()
+sign_up_button = driver.find_element(By.CLASS_NAME, "btn-lg")
 
-search_button = driver.find_element(By.CSS_SELECTOR, "#p-search a")
-search_button.click()
+first_name.click()
+first_name.send_keys("Christian")
 
-search_bar = driver.find_element(By.NAME, "search")
-search_bar.send_keys("Python")
+last_name.click()
+last_name.send_keys("Tsoungui")
 
-search_bar = driver.find_element(By.NAME, "search")
-search_bar.send_keys(Keys.ENTER)
+email.click()
+email.send_keys("tsounguc@mail.gvsu.edu")
+
+sign_up_button.click()
+
 
 
 
